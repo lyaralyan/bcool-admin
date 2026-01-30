@@ -5,7 +5,6 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
-import { Toaster } from "sonner";
 
 export default function DashboardLayout({
   children,
@@ -26,10 +25,6 @@ export default function DashboardLayout({
         <SidebarTrigger />
         {children}
       </SidebarInset>
-      <Toaster
-        richColors
-        position="top-right"
-      />
     </SidebarProvider>
   );
 }

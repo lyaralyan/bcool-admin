@@ -4,6 +4,7 @@ import client from "@/apollo-client";
 // import { ThemeProvider } from "@/components/theme-provider";
 
 import { ApolloProvider } from "@apollo/client/react";
+import { Toaster } from "sonner";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -15,6 +16,10 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         disableTransitionOnChange> */}
       {children}
       {/* </ThemeProvider> */}
+      <Toaster
+        richColors
+        position="top-right"
+      />
     </ApolloProvider>
   );
 }

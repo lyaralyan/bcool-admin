@@ -18,18 +18,17 @@ export default function LoginPage() {
   const [login] = useMutation<LoginResponse>(LOGIN_MUTATION, {
     onCompleted: (data) => {
       if (data?.login?.token) {
-        document.cookie = `token=${data.login.token}; path=/; max-age=3600`;
+        document.cookie = `token=${data.login.token}; path=/;`;
         localStorage.setItem("role", data.login.role);
         toast.success("Login successful!");
-        router.push("/dashboard");
+        router.push("/");
       } else {
         toast.error("Login failed: No token received");
       }
       setLoading(false);
     },
     onError: (error) => {
-      console.error(error);
-      toast.error("Invalid credentials");
+      toast.error(error.message);
       setLoading(false);
     },
   });

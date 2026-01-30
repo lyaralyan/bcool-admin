@@ -1,10 +1,8 @@
-// src/components/app-sidebar.tsx
 "use client";
 
-import { Home, Search, Settings } from "lucide-react";
+import { Home, Search, Settings, Users } from "lucide-react";
 import { MdOutlineCategory } from "react-icons/md";
 import { AiOutlineProduct } from "react-icons/ai";
-
 import Link from "next/link";
 import {
   Sidebar,
@@ -16,9 +14,12 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 const items = [
   { title: "Home", url: "/", icon: Home },
+  { title: "Users", url: "/users", icon: Users },
   { title: "Products", url: "/products", icon: AiOutlineProduct },
   { title: "Categories", url: "/categories", icon: MdOutlineCategory },
   { title: "Search", url: "/search", icon: Search },
@@ -26,6 +27,7 @@ const items = [
 ];
 
 export function AppSidebar() {
+  const pathname = usePathname();
   return (
     <Sidebar>
       <SidebarContent>
@@ -33,18 +35,26 @@ export function AppSidebar() {
           <SidebarGroupLabel>Application</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <Link
-                      href={item.url}
-                      className="flex items-center gap-2">
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+              {items.map((item) => {
+                const isActive =
+                  pathname === item.url || pathname.startsWith(item.url + "/");
+                return (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton
+                      asChild
+                      className={cn(
+                        isActive && "bg-primary text-primary-foreground"
+                      )}>
+                      <Link
+                        href={item.url}
+                        className="flex items-center gap-2">
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

@@ -17,11 +17,13 @@ export default function LoginPage() {
 
   const [login] = useMutation<LoginResponse>(LOGIN_MUTATION, {
     onCompleted: (data) => {
-      if (data?.login?.token) {
+      if (data?.login?.token && data.login.role === "admin") {
         document.cookie = `token=${data.login.token}; path=/;`;
         localStorage.setItem("role", data.login.role);
         toast.success("Login successful!");
         router.push("/");
+      } else if (data.login.role === "user") {
+        toast.error("Login failed: invalid admin data");
       } else {
         toast.error("Login failed: No token received");
       }

@@ -3,7 +3,8 @@ import UploadHttpLink from "apollo-upload-client/UploadHttpLink.mjs";
 
 const client = new ApolloClient({
   link: new UploadHttpLink({
-    uri: "http://localhost:4000/graphql",
+    uri: "https://api.bcool.am/graphql",
+    credentials: "include",
   }),
   cache: new InMemoryCache(),
 });

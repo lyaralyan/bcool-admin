@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-//TODO: category
+// Categories
 
 export const GET_CATEGORIES = gql`
   query categories {
@@ -28,7 +28,7 @@ export const GET_CATEGORIES = gql`
   }
 `;
 
-//TODO: products
+// Products
 
 export const PRODUCTS = gql`
   query Products {
@@ -154,6 +154,8 @@ export const PRODUCT = gql`
   }
 `;
 
+// Users
+
 export const FIND_ALL_USERS = gql`
   query Users {
     users {
@@ -163,6 +165,19 @@ export const FIND_ALL_USERS = gql`
       role
       createdAt
       updatedAt
+    }
+  }
+`;
+
+// Translations (admin)
+
+export const ADMIN_TRANSLATIONS = gql`
+  query AdminTranslations {
+    adminTranslations {
+      key
+      hy
+      en
+      ru
     }
   }
 `;

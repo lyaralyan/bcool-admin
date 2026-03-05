@@ -1,6 +1,7 @@
 import { gql } from "@apollo/client";
 
-//TODO: auth
+// Auth
+
 export const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
     login(data: { email: $email, password: $password }) {
@@ -13,7 +14,8 @@ export const LOGIN_MUTATION = gql`
   }
 `;
 
-// TODO: category
+// Categories
+
 export const CREATE_CATEGORY = gql`
   mutation createCategory($input: CreateCategoryInput!) {
     createCategory(input: $input) {
@@ -66,7 +68,7 @@ export const UPDATE_CATEGORY = gql`
   }
 `;
 
-//TODO: products
+// Products
 
 export const CREATE_PRODUCT = gql`
   mutation CreateProduct($input: CreateProductInput!) {
@@ -134,5 +136,24 @@ export const UPDATE_PRODUCT = gql`
         updatedAt
       }
     }
+  }
+`;
+
+// Translations (admin)
+
+export const UPSERT_TRANSLATION = gql`
+  mutation UpsertTranslation($input: TranslationInput!) {
+    upsertTranslation(input: $input) {
+      key
+      hy
+      en
+      ru
+    }
+  }
+`;
+
+export const DELETE_TRANSLATION = gql`
+  mutation DeleteTranslation($key: String!) {
+    deleteTranslation(key: $key)
   }
 `;

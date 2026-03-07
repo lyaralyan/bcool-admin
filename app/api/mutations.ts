@@ -157,3 +157,224 @@ export const DELETE_TRANSLATION = gql`
     deleteTranslation(key: $key)
   }
 `;
+
+// About Us (separate from translations)
+
+export const UPDATE_ABOUT_US = gql`
+  mutation UpdateAboutUs($input: UpdateAboutUsInput!) {
+    updateAboutUs(input: $input) {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      historyTitle {
+        hy
+        en
+        ru
+      }
+      historyText {
+        hy
+        en
+        ru
+      }
+      whyUsTitle {
+        hy
+        en
+        ru
+      }
+      whyUsText {
+        hy
+        en
+        ru
+      }
+      privacyTitle {
+        hy
+        en
+        ru
+      }
+      privacyText {
+        hy
+        en
+        ru
+      }
+    }
+  }
+`;
+
+// Hero
+
+export const UPDATE_HERO = gql`
+  mutation UpdateHero($input: UpdateHeroInput!) {
+    updateHero(input: $input) {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      subtitle {
+        hy
+        en
+        ru
+      }
+      ctaText {
+        hy
+        en
+        ru
+      }
+      ctaLink
+      image
+      card1Title {
+        hy
+        en
+        ru
+      }
+      card1Subtitle {
+        hy
+        en
+        ru
+      }
+      card1Image
+      card2Title {
+        hy
+        en
+        ru
+      }
+      card2Subtitle {
+        hy
+        en
+        ru
+      }
+      card2Image
+    }
+  }
+`;
+
+// Home section titles
+
+export const UPDATE_HOME_SECTION = gql`
+  mutation UpdateHomeSection($input: UpdateHomeSectionInput!) {
+    updateHomeSection(input: $input) {
+      id
+      ourWorksTitle {
+        hy
+        en
+        ru
+      }
+      completedWorksTitle {
+        hy
+        en
+        ru
+      }
+      selectedOnMapLabel {
+        hy
+        en
+        ru
+      }
+      newProjectCta {
+        hy
+        en
+        ru
+      }
+      completedWorksMapTitle {
+        hy
+        en
+        ru
+      }
+    }
+  }
+`;
+
+// Completed works
+
+export const CREATE_COMPLETED_WORK = gql`
+  mutation CreateCompletedWork($input: CreateCompletedWorkInput!) {
+    createCompletedWork(input: $input) {
+      id
+      name {
+        hy
+        en
+        ru
+      }
+      address {
+        hy
+        en
+        ru
+      }
+      mapUrl
+      order
+      lat
+      lng
+      image
+    }
+  }
+`;
+
+export const UPDATE_COMPLETED_WORK = gql`
+  mutation UpdateCompletedWork($id: String!, $input: UpdateCompletedWorkInput!) {
+    updateCompletedWork(id: $id, input: $input) {
+      id
+      name {
+        hy
+        en
+        ru
+      }
+      address {
+        hy
+        en
+        ru
+      }
+      mapUrl
+      order
+      lat
+      lng
+      image
+    }
+  }
+`;
+
+export const REMOVE_COMPLETED_WORK = gql`
+  mutation RemoveCompletedWork($id: String!) {
+    removeCompletedWork(id: $id)
+  }
+`;
+
+// Contact
+
+export const UPDATE_CONTACT = gql`
+  mutation UpdateContact($input: UpdateContactInput!) {
+    updateContact(input: $input) {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      mapTitle {
+        hy
+        en
+        ru
+      }
+      ctaHeading {
+        hy
+        en
+        ru
+      }
+      address {
+        hy
+        en
+        ru
+      }
+      description {
+        hy
+        en
+        ru
+      }
+      email
+      phone
+      mapEmbedUrl
+    }
+  }
+`;

@@ -181,3 +181,204 @@ export const ADMIN_TRANSLATIONS = gql`
     }
   }
 `;
+
+export const ADMIN_TRANSLATIONS_BY_KEYS = gql`
+  query AdminTranslationsByKeys($keys: [String!]!) {
+    adminTranslationsByKeys(keys: $keys) {
+      key
+      hy
+      en
+      ru
+    }
+  }
+`;
+
+// About Us (separate from translations)
+
+export const ABOUT_US_ADMIN = gql`
+  query AboutUsAdmin {
+    aboutUsAdmin {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      historyTitle {
+        hy
+        en
+        ru
+      }
+      historyText {
+        hy
+        en
+        ru
+      }
+      whyUsTitle {
+        hy
+        en
+        ru
+      }
+      whyUsText {
+        hy
+        en
+        ru
+      }
+      privacyTitle {
+        hy
+        en
+        ru
+      }
+      privacyText {
+        hy
+        en
+        ru
+      }
+    }
+  }
+`;
+
+// Hero (admin)
+
+export const HERO_ADMIN = gql`
+  query HeroAdmin {
+    heroAdmin {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      subtitle {
+        hy
+        en
+        ru
+      }
+      ctaText {
+        hy
+        en
+        ru
+      }
+      ctaLink
+      image
+      card1Title {
+        hy
+        en
+        ru
+      }
+      card1Subtitle {
+        hy
+        en
+        ru
+      }
+      card1Image
+      card2Title {
+        hy
+        en
+        ru
+      }
+      card2Subtitle {
+        hy
+        en
+        ru
+      }
+      card2Image
+    }
+  }
+`;
+
+// Home section titles + Completed works (admin)
+
+export const HOME_SECTION_ADMIN = gql`
+  query HomeSectionAdmin {
+    homeSectionAdmin {
+      id
+      ourWorksTitle {
+        hy
+        en
+        ru
+      }
+      completedWorksTitle {
+        hy
+        en
+        ru
+      }
+      selectedOnMapLabel {
+        hy
+        en
+        ru
+      }
+      newProjectCta {
+        hy
+        en
+        ru
+      }
+      completedWorksMapTitle {
+        hy
+        en
+        ru
+      }
+    }
+  }
+`;
+
+export const COMPLETED_WORKS_ADMIN = gql`
+  query CompletedWorksAdmin {
+    completedWorksAdmin {
+      id
+      name {
+        hy
+        en
+        ru
+      }
+      address {
+        hy
+        en
+        ru
+      }
+      mapUrl
+      order
+      lat
+      lng
+      image
+    }
+  }
+`;
+
+// Contact (admin)
+
+export const CONTACT_ADMIN = gql`
+  query ContactAdmin {
+    contactAdmin {
+      id
+      title {
+        hy
+        en
+        ru
+      }
+      mapTitle {
+        hy
+        en
+        ru
+      }
+      ctaHeading {
+        hy
+        en
+        ru
+      }
+      address {
+        hy
+        en
+        ru
+      }
+      description {
+        hy
+        en
+        ru
+      }
+      email
+      phone
+      mapEmbedUrl
+    }
+  }
+`;

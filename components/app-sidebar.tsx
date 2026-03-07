@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Search, Settings, Users } from "lucide-react";
+import { Home, Search, Settings, Users, FileText, MapPin, Phone, Image as ImageIcon } from "lucide-react";
 import { MdOutlineCategory } from "react-icons/md";
 import { AiOutlineProduct } from "react-icons/ai";
 import Link from "next/link";
@@ -22,6 +22,10 @@ const items = [
   { title: "Users", url: "/users", icon: Users },
   { title: "Products", url: "/products", icon: AiOutlineProduct },
   { title: "Categories", url: "/categories", icon: MdOutlineCategory },
+  { title: "Hero", url: "/hero", icon: ImageIcon },
+  { title: "About Us", url: "/about-us", icon: FileText },
+  { title: "Our Works", url: "/our-works", icon: MapPin },
+  { title: "Contact", url: "/contact", icon: Phone },
   { title: "Search", url: "/search", icon: Search },
   { title: "Settings", url: "/settings", icon: Settings },
 ];
